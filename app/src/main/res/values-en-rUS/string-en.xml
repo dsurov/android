@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="greeting1">Good morning</string>
+    <string name="greeting2">good afternoon</string>
+    <string name="greeting3">good evening</string>
+    <string name="greeting4">Hello</string>
+    <string name="greeting5">Goodnight</string>
+    <string name="greeting6">Good day</string>
+    <string name="weather_attr1">Wind speed</string>
+    <string name="weather_attr2">Pressure outside</string>
+    <string name="weather_attr3">Humidity</string>
+    <string name="weather_attr4">**To view the weather, select a city from the list, specify the required parameters and click "ок"**</string>
+    <string name="weather_attr5">25</string>
+    <string name="weather_attr6">10 м/c</string>
+    <string name="weather_attr7">680</string>
+    <string name="weather_attr8">75%</string>
+    <string name="weather_attr9">Temperature</string>
+    <string name="city1">City</string>
+    <string name="change_city_button">Choose</string>
+    <string name="exit_button">EXIT</string>
+    <string name="ok_button">OK</string>
+    <string name="back_button">BACK</string>
+
+    <string-array name="city_list">
+        <item>Rostov-on-Don</item>
+        <item>Moscow</item>
+        <item>Khabarovsk</item>
+        <item>St. Petersburg</item>
+        <item>Yekaterinburg</item>
+        <item>Voronezh</item>
+        <item>Yaroslavl</item>
+        <item>Volgograd</item>
+        <item>Stavropol</item>
+        <item>Tyumen</item>
+        <item>Samara</item>
+        <item>Saratov</item>
+        <item>Novosibirsk</item>
+        <item>Chelyabinsk</item>
+        <item>Sochi</item>
+        <item>Armavir</item>
+    </string-array>
+</resources>
