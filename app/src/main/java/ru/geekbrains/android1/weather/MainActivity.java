@@ -1,6 +1,7 @@
 package ru.geekbrains.android1.weather;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -15,11 +16,11 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -144,22 +145,29 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //кнопка ОК
-        OkBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent secAct2 = new Intent(getApplicationContext(),
-                        Activity2.class);
-                final boolean chk1 = ((CheckBox) chkBx1).isChecked();
-                final boolean chk2 = ((CheckBox) chkBx2).isChecked();
-                final boolean chk3 = ((CheckBox) chkBx3).isChecked();
-                final String str2 = LsT.getText().toString();
-                secAct2.putExtra("City", str2);
-                secAct2.putExtra("chk1bx", chk1);
-                secAct2.putExtra("chk2bx", chk2);
-                secAct2.putExtra("chk3bx", chk3);
-                startActivity(secAct2);
-            }
-        });
+        if(getScreenOrientation()==false) {
+            OkBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent secAct2 = new Intent(getApplicationContext(),
+                            Activity2.class);
+                    final boolean chk1 = ((CheckBox) chkBx1).isChecked();
+                    final boolean chk2 = ((CheckBox) chkBx2).isChecked();
+                    final boolean chk3 = ((CheckBox) chkBx3).isChecked();
+                    final String str2 = LsT.getText().toString();
+                    secAct2.putExtra("City", str2);
+                    secAct2.putExtra("chk1bx", chk1);
+                    secAct2.putExtra("chk2bx", chk2);
+                    secAct2.putExtra("chk3bx", chk3);
+                    startActivity(secAct2);
+                }
+            });
+        }
+        if(getScreenOrientation()==true) {
+        }
+
+
+
 
         Intent intent2 = getIntent();
         if (intent2.getStringExtra("City2") != null) {
@@ -189,6 +197,15 @@ public class MainActivity extends AppCompatActivity {
         }
         return usr_greeting;
     }
+
+    private boolean  getScreenOrientation(){
+        boolean or=false;
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            or = true;
+            return or;
+        }
+        return or;
+            }
 
 
 }
