@@ -206,6 +206,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return or;
             }
-
-
 }
